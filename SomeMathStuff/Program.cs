@@ -7,12 +7,15 @@ namespace SomeMathStuff
         static void Main(string[] args)
         {
             Figure firstCircle = new Circle(5);
+            firstCircle.Calc();
             firstCircle.calculate_perimeter();
             firstCircle.calculate_area();
             Figure anotherShape = new Triangle(3, 4, 5);
+            anotherShape.Calc();
             anotherShape.calculate_area();
             anotherShape.calculate_perimeter();
             anotherShape = new Square(6, 6);
+            anotherShape.Calc();
             anotherShape.calculate_area();
             anotherShape.calculate_perimeter();
             Console.ReadKey();
@@ -23,6 +26,10 @@ namespace SomeMathStuff
     {
         public abstract void calculate_perimeter();
         public abstract void calculate_area();
+        public void Calc()
+        {
+            Console.WriteLine("Calculating...");
+        }
     }
 
     class Circle : Figure
